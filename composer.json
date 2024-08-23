@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Garavelphp\\Commands\\": "src/"
+      "GaravelPHP\\Commands\\": "src/"
     }
   },
   "require-dev": {
