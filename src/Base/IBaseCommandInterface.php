@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Commands\Base;
+namespace GaravelPHP\Commands\Base;
 
 interface IBaseCommandInterface
 {

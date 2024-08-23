@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Commands\Helpers;
+namespace GaravelPHP\Commands\Helpers;
 
 class ConsoleTable
 {

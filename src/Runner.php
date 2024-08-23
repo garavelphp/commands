@@ -51,8 +51,8 @@ class Runner
 
     public function loadSystemCommands(): void
     {
-        $commandsPath = core_path('Commands/SystemCommands/');
-        $this->loadCommands($commandsPath,'Core\\Commands\\SystemCommands\\' );
+        $commandsPath = __DIR__.'/SystemCommands/';
+        $this->loadCommands($commandsPath,'GaravelPHP\\Commands\\SystemCommands\\' );
     }
 
     public function loadCommands($commandsPath,$namespace): void

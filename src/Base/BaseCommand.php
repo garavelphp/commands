@@ -1,8 +1,8 @@
 <?php
 
-namespace Core\Commands\Base;
+namespace GaravelPHP\Commands\Base;
 
-use Core\Commands\Helpers\ConsoleTable;
+use GaravelPHP\Commands\Helpers\ConsoleTable;
 
 class BaseCommand implements IBaseCommandInterface
 {
@@ -67,7 +67,7 @@ class BaseCommand implements IBaseCommandInterface
 
     public function changeContent($key, $value, $content)
     {
-        return str_replace($key, $value, $content);
+        return @str_replace($key, $value, $content);
     }
 
     public function cleanName($name)
