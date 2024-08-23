@@ -35,6 +35,9 @@ class RunMigrationCommand extends BaseCommand
 
         $migration = 'App\\Database\\Migrations\\' . $name;
         $migration = new $migration();
+        if (is_null($type)) {
+            $type = 'up';
+        }
         $migration->run($type);
     }
 

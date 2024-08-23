@@ -27,18 +27,18 @@ class MakeMigration extends BaseCommand
     public function run()
     {
         $name = $this->option('name');
-        $name = ucfirst($name);
+        $name = strtolower($name);
         $name = str_replace(' ', '', $name);
         $name = str_replace(':', '', $name);
-        $name = $name . 'Command';
-        $path = 'Commands/' . $name . '.php';
+        $name = 'create_'.$name;
+        $path = 'Database/Migrations/' . $name . '.php';
         $openTemplate = fopen(core_path('FileTemplates/migration.template'), 'r');
-        $content = fread($openTemplate, filesize(core_path('FileTemplates/command.template')));
-        $content = str_replace('[CommandName]', $name, $content);
+        $content = fread($openTemplate, filesize(core_path('FileTemplates/migration.template')));
+        $content = str_replace('[MigrationName]', $name, $content);
         $createCommand = fopen(app_path($path), 'w');
         fwrite($createCommand, $content);
         fclose($createCommand);
-        echo 'Command created successfully';
+        echo 'Migration created successfully';
     }
 
 
